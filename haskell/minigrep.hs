@@ -19,9 +19,8 @@ grep :: String -> FilePath -> IO ()
 grep query filename = do
   contents <- readFile filename
   let
-    -- matchingLines = filter (query `isSubsequenceOf`) (lines contents)
     numberedLines = zip [1 ..] (lines contents)
-    matches = [(n, line) | (n, line) <- numberedLines, query `isSubsequenceOf` line]
+    matches = [(n, line) | (n, line) <- numberedLines, query `isSubstringOf` line]
 
   if null matches
     then putStrLn $ "No matches found for '" ++ query ++ "' in " ++ filename
@@ -31,9 +30,14 @@ grep query filename = do
   printMatch (lineNum, line) =
     putStrLn $ show lineNum ++ ": " ++ line
 
-isSubsequenceOf :: (Eq a) => [a] -> [a] -> Bool
-isSubsequenceOf [] _ = True
-isSubsequenceOf _ [] = False
-isSubsequenceOf needle@(x : xs) (y : ys)
-  | x == y = isSubsequenceOf xs ys
-  | otherwise = isSubsequenceOf needle ys
+isSubstringOf :: (Eq a) => [a] -> [a] -> Bool
+isSubstringOf [] _ = True
+isSubstringOf _ [] = False
+isSubstringOf needle haystack = any (needle `isPrefixOf`) (tails haystack)
+  where
+    tails [] = [[]]
+    tails xs@(_ : ys) = xs : tails ys
+
+    isPrefixOf [] _ = True
+    isPrefixOf _ [] = False
+    isPrefixOf (x : xs) (y : ys) = x == y && xs `isPrefixOf` ys
