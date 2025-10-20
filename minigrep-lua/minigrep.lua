@@ -1,21 +1,10 @@
 -- Minigrep in Lua
 
-local function is_subsequence_of(query, line)
-	local i = 0
-	while i < #query do
-		if string.sub(line, i, (i + 1)) ~= string.sub(query, i, (i + 1)) then
-			return false
-		end
-		i = i + 1
-	end
-	return true
-end
-
 local function get_matches(query, lines)
 	local matches = {}
 	local i = 0
 	for line in lines do
-		if is_subsequence_of(query, line) then
+		if string.find(line, query, 1, true) ~= nil then
 			table.insert(matches, { i, line })
 		end
 		i = i + 1
