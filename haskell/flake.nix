@@ -18,24 +18,21 @@
           buildInputs = with pkgs; [ haskellPackages.ghc ];
 
           buildPhase = ''
-            ${pkgs.haskellPackages.ghc}/bin/ghc -o $out ${./app/Main.hs}
+            mkdir -p $out/bin
+            ${pkgs.haskellPackages.ghc}/bin/ghc -o $out/bin/minigrep-hs ${
+              ./minigrep.hs
+            }
           '';
         };
 
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            cabal-install
+            haskellPackages.ghc
             ghcid
             haskell-language-server
             hlint
             ormolu
-            haskellPackages.ghc
           ];
-          shellHook = ''
-            echo "Haskell GHC: $(${pkgs.haskellPackages.ghc}/bin/ghc -v)"
-            echo "Cabal: $(${pkgs.cabal-install}/bin/cabal --version)"
-            echo "Run './result/bin/minigrep'."
-          '';
         };
       });
 }

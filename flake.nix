@@ -4,9 +4,9 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    haskell.url = "path:./minigrep-hs/";
-    lua.url = "path:./minigrep-lua/";
-    fennel.url = "path:./minigrep-fnl/";
+    haskell.url = "path:./hs/";
+    lua.url = "path:./lua/";
+    fennel.url = "path:./fennel/";
   };
 
   outputs = { self, nixpkgs, flake-utils, haskell, lua, fennel }:
