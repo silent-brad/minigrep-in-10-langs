@@ -12,10 +12,11 @@
     go.url = "path:./go/";
     elixir.url = "path:./elixir/";
     gleam.url = "path:./gleam/";
+    java.url = "path:./java/";
   };
 
   outputs = { self, nixpkgs, flake-utils, haskell, lua, nim, scheme, rust, go
-    , elixir, gleam }:
+    , elixir, gleam, java }:
     flake-utils.lib.eachDefaultSystem (system: {
       packages = {
         haskell = haskell.packages."${system}".default;
@@ -26,6 +27,7 @@
         go = go.packages."${system}".default;
         elixir = elixir.packages."${system}".default;
         gleam = gleam.packages."${system}".default;
+        java = java.packages."${system}".default;
       };
     });
 }

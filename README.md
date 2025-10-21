@@ -1,4 +1,4 @@
-# minigrep-in-8-langs
+# minigrep-in-10-langs
 Implemented minigrep in:
 - Haskell
 - Scheme
@@ -8,5 +8,7 @@ Implemented minigrep in:
 - Elixir
 - Go
 - Gleam
+- Java
+- TypeScript
 
 To run: `nix build .#` with the language
