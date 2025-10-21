@@ -1,33 +1,5 @@
 {
   "nodes": {
-    "fennel": {
-      "inputs": {
-        "fennel-file": "fennel-file",
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "path": "./fennel/",
-        "type": "path"
-      },
-      "original": {
-        "path": "./fennel/",
-        "type": "path"
-      },
-      "parent": []
-    },
-    "fennel-file": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-OzUGRb5HHai3QPIYWkf8jd6qKi+dMVjf/AimHJe68/M=",
-        "type": "file",
-        "url": "https://fennel-lang.org/downloads/fennel-1.5.3.lua"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://fennel-lang.org/downloads/fennel-1.5.3.lua"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -118,10 +90,28 @@
         "type": "github"
       }
     },
+    "flake-utils_6": {
+      "inputs": {
+        "systems": "systems_6"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "haskell": {
       "inputs": {
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_2"
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "path": "./haskell/",
@@ -135,8 +125,8 @@
     },
     "lua": {
       "inputs": {
-        "flake-utils": "flake-utils_4",
-        "nixpkgs": "nixpkgs_3"
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "path": "./lua/",
@@ -150,8 +140,8 @@
     },
     "nim": {
       "inputs": {
-        "flake-utils": "flake-utils_5",
-        "nixpkgs": "nixpkgs_4"
+        "flake-utils": "flake-utils_4",
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "path": "./nim/",
@@ -243,15 +233,62 @@
         "type": "github"
       }
     },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1760878510,
+        "narHash": "sha256-K5Osef2qexezUfs0alLvZ7nQFTGS9DL2oTVsIXsqLgs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5e2a59a5b1a82f89f2c7e598302a9cacebb72a67",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "fennel": "fennel",
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils",
         "haskell": "haskell",
         "lua": "lua",
         "nim": "nim",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_4",
+        "rust": "rust",
+        "scheme": "scheme"
       }
+    },
+    "rust": {
+      "inputs": {
+        "flake-utils": "flake-utils_5",
+        "nixpkgs": "nixpkgs_5"
+      },
+      "locked": {
+        "path": "./rust/",
+        "type": "path"
+      },
+      "original": {
+        "path": "./rust/",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "scheme": {
+      "inputs": {
+        "flake-utils": "flake-utils_6",
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "path": "./scheme/",
+        "type": "path"
+      },
+      "original": {
+        "path": "./scheme/",
+        "type": "path"
+      },
+      "parent": []
     },
     "systems": {
       "locked": {
@@ -314,6 +351,21 @@
       }
     },
     "systems_5": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_6": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
