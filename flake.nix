@@ -7,16 +7,16 @@
     haskell.url = "path:./haskell/";
     lua.url = "path:./lua/";
     nim.url = "path:./nim/";
-    fennel.url = "path:./fennel/";
+    scheme.url = "path:./scheme/";
   };
 
-  outputs = { self, nixpkgs, flake-utils, haskell, lua, nim, fennel }:
+  outputs = { self, nixpkgs, flake-utils, haskell, lua, nim, scheme }:
     flake-utils.lib.eachDefaultSystem (system: {
       packages = {
         haskell = haskell.packages."${system}".default;
         lua = lua.packages."${system}".default;
         nim = nim.packages."${system}".default;
-        fennel = fennel.packages."${system}".default;
+        scheme = scheme.packages."${system}".default;
       };
     });
 }
