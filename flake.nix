@@ -14,10 +14,11 @@
     gleam.url = "path:./gleam/";
     java.url = "path:./java/";
     typescript.url = "path:./typescript/";
+    cpp.url = "path:./cpp/";
   };
 
   outputs = { self, nixpkgs, flake-utils, haskell, lua, nim, scheme, rust, go
-    , elixir, gleam, java, typescript }:
+    , elixir, gleam, java, typescript, cpp }:
     flake-utils.lib.eachDefaultSystem (system: {
       packages = {
         haskell = haskell.packages."${system}".default;
@@ -30,6 +31,7 @@
         gleam = gleam.packages."${system}".default;
         java = java.packages."${system}".default;
         typescript = typescript.packages."${system}".default;
+        cpp = cpp.packages."${system}".default;
       };
     });
 }
