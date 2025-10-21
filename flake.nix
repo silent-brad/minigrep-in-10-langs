@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    haskell.url = "path:./hs/";
+    haskell.url = "path:./haskell/";
     lua.url = "path:./lua/";
     nim.url = "path:./nim/";
     fennel.url = "path:./fennel/";
