@@ -21,6 +21,7 @@
             mkdir -p $out/bin
             ${pkgs.jdk17}/bin/javac -d $out/bin ${./minigrep.java}
             cat > $out/bin/minigrep-java << EOF
+            #!${pkgs.runtimeShell}
             ${pkgs.jdk17}/bin/java -cp $out/bin Minigrep "\$@"
             EOF
             chmod +x $out/bin/minigrep-java
