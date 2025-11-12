@@ -1,6 +1,6 @@
 /**
  * Minigrep in Java
- * 
+ *
  * @author Brad White
  * @date 2025-10-21
  */

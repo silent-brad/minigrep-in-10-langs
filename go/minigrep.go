@@ -21,7 +21,7 @@ func main() {
 	query := args[0]
 	filename := args[1]
 
-	// Get file	contents
+	// Get file contents
 	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Println(err)
