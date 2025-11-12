@@ -15,14 +15,16 @@
           version = "0.0.1";
           src = ./.;
 
-          buildInputs = with pkgs; [ ocaml ];
+          buildInputs = with pkgs; [ ocaml dune_3 ];
 
           buildPhase = ''
             mkdir -p $out/bin
-            ${pkgs.ocaml}/bin/ocamlopt -o $out/bin/minigrep-ml ${./minigrep.ml}
+            ${pkgs.dune_3}/bin/dune build
+            cp _build/default/bin/main.exe $out/bin/minigrep-ml
           '';
         };
 
-        devShells.default = pkgs.mkShell { packages = with pkgs; [ ocaml ]; };
+        devShells.default =
+          pkgs.mkShell { packages = with pkgs; [ ocaml dune_3 ]; };
       });
 }

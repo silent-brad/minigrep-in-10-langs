@@ -6,14 +6,12 @@ open Printf
 
 let read_lines (file_name : string) : string list =
   In_channel.with_open_text file_name In_channel.input_lines
-;;
 
 let contains (line : string) (sub: string) : bool =
   let re = Str.regexp_string sub
   in
     try ignore (Str.search_forward re line 0); true
     with Not_found -> false
-;;
 
 let () =
   let argc = Array.length Sys.argv in
@@ -33,4 +31,3 @@ let () =
           loop lines
     in
     loop full_lines
-;;
