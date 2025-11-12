@@ -1,4 +1,4 @@
-# minigrep-in-11-langs
+# minigrep-in-12-langs
 Implemented minigrep in:
 - Haskell
 - Scheme
@@ -11,5 +11,6 @@ Implemented minigrep in:
 - Java
 - TypeScript
 - C++
+- OCaml
 
 To run: `nix build .#` with the language

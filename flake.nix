@@ -15,23 +15,24 @@
     java.url = "path:./java/";
     typescript.url = "path:./typescript/";
     cpp.url = "path:./cpp/";
+    ocaml.url = "path:./ocaml/";
   };
 
-  outputs = { self, nixpkgs, flake-utils, haskell, lua, nim, scheme, rust, go
-    , elixir, gleam, java, typescript, cpp }:
+  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system: {
       packages = {
-        haskell = haskell.packages."${system}".default;
-        lua = lua.packages."${system}".default;
-        nim = nim.packages."${system}".default;
-        scheme = scheme.packages."${system}".default;
-        rust = rust.packages."${system}".default;
-        go = go.packages."${system}".default;
-        elixir = elixir.packages."${system}".default;
-        gleam = gleam.packages."${system}".default;
-        java = java.packages."${system}".default;
-        typescript = typescript.packages."${system}".default;
-        cpp = cpp.packages."${system}".default;
+        haskell = inputs.haskell.packages."${system}".default;
+        lua = inputs.lua.packages."${system}".default;
+        nim = inputs.nim.packages."${system}".default;
+        scheme = inputs.scheme.packages."${system}".default;
+        rust = inputs.rust.packages."${system}".default;
+        go = inputs.go.packages."${system}".default;
+        elixir = inputs.elixir.packages."${system}".default;
+        gleam = inputs.gleam.packages."${system}".default;
+        java = inputs.java.packages."${system}".default;
+        typescript = inputs.typescript.packages."${system}".default;
+        cpp = inputs.cpp.packages."${system}".default;
+        ocaml = inputs.ocaml.packages."${system}".default;
       };
     });
 }

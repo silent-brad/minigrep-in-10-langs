@@ -1,0 +1,3 @@
+(library
+ (name minigrep)
+ (libraries str))
