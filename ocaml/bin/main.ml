@@ -22,8 +22,7 @@ let () =
     let filename = Sys.argv.(2) in
     let full_lines = read_lines filename in
     let full_length = List.length full_lines in
-    let rec loop lines =
-      match lines with
+    let rec loop = function
       | [] -> ()
       | line :: lines ->
           if contains line pattern then
